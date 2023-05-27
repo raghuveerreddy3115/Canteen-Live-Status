@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login to Canteen live status</title>
+  <link rel="stylesheet" href="signup.css">
+</head>
+
+<body>
+  <div class="sign-up-form">
+    <img src="user-image2.jpg">
+    <h1> Sign Up Now </h1>
+    <form>
+      <div class="email">
+        <input type="text" id="username" class="input-box" placeholder="username" name="username">
+        <i class="fa-solid fa-envelope"></i>
+        <input type="text" id="email" class="input-box" placeholder="Your Email" name="Email">
+        <i class="fa-solid fa-key"></i>
+        <input type="password" id="password" class="input-box" placeholder="Your password" name="password">
+
+      </div>
+      <div>
+        <!-- <form action="connect.php" method="post"> -->
+        <input type="radio" value="Customer" name="Usertype" id="Usertype"> Customer
+        <label for="UsertypeCustomer"></label>
+        <input type="radio" value="Owner" name="Usertype" id="Usertype"> Owner
+        <label for="UsertypeOwner"></label>
+      </div>
+      <!-- <button class="signup-btn">SIGN IN </button> -->
+      <div class="signup-btn">
+        <input type="button" id="signup" name="signup_submit" value="Sign Up" />
+      </div>
+
+      <hr>
+      <!-- <p class="or">OR</p> -->
+      <!-- <button class="google-btn"> Login in with google</button> -->
+      <p>Do you have an account ? <a href="login.html">Log in</a></p>
+    </form>
+  </div>
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js";
+    import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-database.js";
+    import { getAuth, createUserWithEmailAndPassword ,signInWithEmailAndPassword ,onAuthStateChanged} from "https://www.gstatic.com/firebasejs/9.18.0/firebase-auth.js";
+
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyDLPGTT_raHG_xMVBwgjR2LA5ZzdRQQ8Es",
+      authDomain: "canteen-live-status-2fcc0.firebaseapp.com",
+      databaseURL: "https://canteen-live-status-2fcc0-default-rtdb.firebaseio.com",
+      projectId: "canteen-live-status-2fcc0",
+      storageBucket: "canteen-live-status-2fcc0.appspot.com",
+      messagingSenderId: "956017245508",
+      appId: "1:956017245508:web:691daeac8697753ea2eb11"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase(app);
+    const auth = getAuth();
+
+    signup.addEventListener('click', (e) => {
+
+      var email = document.getElementById('email').value;
+      var password = document.getElementById('password').value;
+      createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          // Signed in 
+          const user = userCredential.user;
+
+          set(ref(database, 'users/' + user.uid), {
+            username: username,
+            email: email,
+          })
+          alert('user created!');
+          // ...
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+
+          alert(errorMessage);
+          // ..
+        });
+    })
+
+
+   
+
+  </script>
+</body>
+</html>

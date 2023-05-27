@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>log-in-page</title>
+  <link rel="stylesheet" href="signup.css">
+</head>
+
+<body>
+  <div class="Sign-in-page">
+    <img src="user-image2.jpg">
+    <h1>Log In</h1>
+    <form>
+      <input type="email" class="input-box" placeholder="Your Email">
+      <div>
+        <input type="password" class="input-box" placeholder="Your password">
+      </div>
+      <button class="signin-btn">Log In</button>
+    </form>
+  </div>
+  <script type="module">
+    //  Import the functions you need from the SDKs you need
+    // import { initializeApp } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js";
+    // import { getDatabase, set, ref, update } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-database.js";
+    // import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-auth.js";
+
+    // // TODO: Add SDKs for Firebase products that you want to use
+    // // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // // Your web app's Firebase configuration
+    // const firebaseConfig = {
+    //   apiKey: "AIzaSyDLPGTT_raHG_xMVBwgjR2LA5ZzdRQQ8Es",
+    //   authDomain: "canteen-live-status-2fcc0.firebaseapp.com",
+    //   databaseURL: "https://canteen-live-status-2fcc0-default-rtdb.firebaseio.com",
+    //   projectId: "canteen-live-status-2fcc0",
+    //   storageBucket: "canteen-live-status-2fcc0.appspot.com",
+    //   messagingSenderId: "956017245508",
+    //   appId: "1:956017245508:web:691daeac8697753ea2eb11"
+    // };
+
+    // // Initialize Firebase
+    // const app = initializeApp(firebaseConfig);
+    // const database = getDatabase(app);
+    // const auth = getAuth();
+
+    // signup.addEventListener('click', (e) => {
+
+    //   var email = document.getElementById('email').value;
+    //   var password = document.getElementById('password').value;
+    //   createUserWithEmailAndPassword(auth, email, password)
+    //     .then((userCredential) => {
+    //       // Signed in 
+    //       const user = userCredential.user;
+
+    //       set(ref(database, 'users/' + user.uid), {
+    //         username: username,
+    //         email: email,
+    //       })
+    //       alert('Log in saved');
+    //       // ...
+    //     })
+    //     .catch((error) => {
+    //       const errorCode = error.code;
+    //       const errorMessage = error.message;
+
+    //       alert(errorMessage);
+    //       // ..
+    //     });
+    // })
+
+    // login.addEventListener('click', (e) => {
+    //   var email = document.getElementById('email').value;
+    //   var password = document.getElementById('password').value;
+    //   signInWithEmailAndPassword(auth, email, password)
+    //     .then((userCredential) => {
+    //       // Signed in 
+    //       const user = userCredential.user;
+
+    //       const dt = new Date();
+    //       update(ref(database, 'users/' + user.uid), {
+    //         last_login: dt,
+    //       })
+    //       alert('User logged in!');
+    //       // ...
+    //     })
+    //     .catch((error) => {
+    //       const errorCode = error.code;
+    //       const errorMessage = error.message;
+
+    //       alert(errorMessage);
+    //     });
+
+    // });
+    // const user = auth.currentUser;
+    // onAuthStateChanged(auth, (user) => {
+    //   if (user) {
+    //     // User is signed in, see docs for a list of available properties
+    //     // https://firebase.google.com/docs/reference/js/firebase.User
+    //     const uid = user.uid;
+    //     // ...
+    //   } else {
+    //     // User is signed out
+    //     // ...
+    //   }
+    // });
+
+    // logout.addEventListener('click', (e) => {
+
+    //   signOut(auth).then(() => {
+    //     // Sign-out successful.
+    //     alert('user logged out');
+    //   }).catch((error) => {
+    //     // An error happened.
+    //     const errorCode = error.code;
+    //     const errorMessage = error.message;
+
+    //     alert(errorMessage);
+    //   });
+
+    // });
+
+    // import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+    // import { getAuth, signInWithEmailAndPassword, } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
+    // import firebaseConfig from "./config.js";
+    // const app = initializeApp(firebaseConfig);
+    // const auth = getAuth(app);
+    // document.getElementById("submit").addEventListener("click", function (event) {
+    //   event.preventDefault();
+    //   const email = document.getElementById("email").value;
+    //   const password = document.getElementById("password").value;
+
+    //   signInWithEmailAndPassword(auth, email, password)
+    //     .then((userCredential) => {
+    //       // Signed in
+    //       console.log("signed in", userCredential);
+    //     })
+    //   const user = userCredential.user;
+
+    //   const dt = new Date();
+    //   update(ref(database, 'users/' + user.uid), {
+    //     last_login: dt,
+    //   })
+    //   alert('User logged in!');
+    //   // ...
+    // })
+    //   .then(() => {
+    //     window.location.assign("responce.html");
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //     alert("Incorrect Password or Username");
+    //   });
+  </script>
+</body>
+
+</html>
